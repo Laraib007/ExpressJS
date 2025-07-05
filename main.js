@@ -6,7 +6,7 @@ const fs = require('fs')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.sendFile('./laraib.txt', { root: __dirname })
 })
 app.get('/:slug', (req, res) => {
     const date = new Date()
