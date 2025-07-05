@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 })
 app.get('/:slug', (req, res) => {
     const date = new Date()
-    fs.appendFileSync("loggin.txt", `Admin ${req.params.slug} Loggin at ${date}. \n`)
+    fs.appendFileSync(req.params.slug, `Admin ${req.params.slug} Loggin at ${date}. \n`)
   res.send(`Hello ${req.params.slug}`)
 })
 
