@@ -3,9 +3,12 @@ const app = express()
 const port = 3000
 const fs = require('fs')
 const path = require('path')
+const blog = require('./routes/blogs')
+
+app.use('/blog', blog)
+
 
 app.use(express.static('public'))
-
 
 
 app.get('/', (req, res) => {
