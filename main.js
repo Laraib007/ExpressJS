@@ -9,11 +9,13 @@ app.use('/blog', blog)
 
 
 app.use(express.static('public'))
-
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
+    let siteName = "Fashion"
+    let search = "Search Now!"
     // res.sendFile(path.join(__dirname, 'public/laraib.txt'))
-  res.sendFile('templates/navbar.html', { root: __dirname })
+  res.render('navbar', {siteName, search})
 })
 app.get('/:slug', (req, res) => {
     const date = new Date()
