@@ -13,7 +13,7 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     // res.sendFile(path.join(__dirname, 'public/laraib.txt'))
-  res.sendFile('./public/shawaiz.txt', { root: __dirname })
+  res.sendFile('templates/navbar.html', { root: __dirname })
 })
 app.get('/:slug', (req, res) => {
     const date = new Date()
